@@ -1,0 +1,33 @@
+﻿@page "/"
+<br/>
+ <br/>
+ <br/>
+ <br/>
+<br/>
+ <div class="card-header"></div>
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
+         <br/>
+         <strong><em><font face=”Times New Roman”><center><h1 style="color:red;">Bienvenido Administrador</h1></center></font></em></strong>
+      <br/>
+         <div class="card-header"></div>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Usuario">
+    <Authorized Context="AuthenticationState">
+          <br/>
+         <strong><em><font face=”Times New Roman”><center><h1 style="color:red;">Bienvenido Usuario</h1></center></font></em></strong>
+     <br/>
+         <div class="card-header"></div>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView>
+    <NotAuthorized>
+          <br/>
+          <strong><em><font face=”Times New Roman”><center><h1 style="color:red;">Debe identificarse para poder acceder a la aplicación</h1></center></font></em></strong>
+        <br/>
+          <div class="card-header"></div>
+    </NotAuthorized> 
+</AuthorizeView>

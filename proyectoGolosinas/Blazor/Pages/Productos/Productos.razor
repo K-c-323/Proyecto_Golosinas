@@ -1,0 +1,50 @@
+﻿@page "/Productos"
+
+<body style="background-color:rgb(229, 231, 235 );">
+</body>
+<strong><em><font face=”Times New Roman”><center><h2 style="color:red;">Menu Golosinas</h2></center></font></em></strong>
+
+<div class="card-header"></div>
+<style>
+    tr:nth-child(even) {
+        background-color: #FADBD8;
+    }
+</style>
+@if (productosLista == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <table class="table">
+     <thead style="color:blue;">
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Existencia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in productosLista)
+            {
+                <tr>
+                    <td>@user.Codigo</td>
+                    <td>@user.Descripcion</td>
+                    <td>@user.Precio</td>
+                    <td>@user.Existencia</td>
+                     <td>
+                      <strong><a class="alert-heading" href="@($"/Productos/Editar/{user.Codigo}")">Editar</a></strong>  
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class"form-group row">
+    <div class="col-sm-2">
+        <a href="/Productos/Nuevo" class="btn btn-outline-primary">Agregar Golosina</a>
+    </div>
+</div>
+}
+

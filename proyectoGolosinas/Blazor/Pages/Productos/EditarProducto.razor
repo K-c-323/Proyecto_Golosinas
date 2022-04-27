@@ -1,0 +1,75 @@
+﻿@page "/Productos/Editar/{Codigo}"
+
+
+<EditForm Model="@user">
+	<DataAnnotationsValidator />
+<body style="background-color:rgb(229, 231, 235 );" />
+
+    <strong><em><font face=”Times New Roman”><center><h2 style="color:red;">Editar Producto</h2></center></font></em></strong>
+
+
+    <div class="card-header"></div>
+
+    <hr />
+
+	<div class="fore=group row">
+		<label fro="Codigo" class="col-sm-2 col-form-label">
+		       <strong><h6 style="color:blue;"> Codigo : </h6></strong>
+		</label>
+		<div class="col-sm-5">
+			<InputText id="Codigo" class="form-control" placeholder="Codigo" @bind-Value="user.Codigo" />
+			<ValidationMessage For="@(() => user.Codigo)" />
+		</div>
+	</div>
+
+
+	<div class="fore=group row">
+		<label fro="Descripcion" class="col-sm-2 col-form-label">
+			    <strong><h6 style="color:blue;"> Descripcion : </h6></strong>
+		</label>
+		<div class="col-sm-5">
+			<InputText id="Descripcion" class="form-control" placeholder="Descripcion" @bind-Value="user.Descripcion" />
+			<ValidationMessage For="@(() => user.Descripcion)" />
+		</div>
+	</div>
+
+		<div class="fore=group row">
+		<label fro="Precio" class="col-sm-2 col-form-label"> 
+			    <strong><h6 style="color:blue;"> Precio : </h6></strong>
+		
+		</label>
+		<div class="col-sm-5">
+			<InputText id="Precio" class="form-control" placeholder="Precio" @bind-Value="user.Precio"/>
+			<ValidationMessage For="@(() => user.Precio)" />
+		</div>
+	</div>
+
+		<div class="fore=group row">
+		<label fro="Existencia" class="col-sm-2 col-form-label">
+			    <strong><h6 style="color:blue;"> Existencia : </h6></strong>
+			
+		</label>
+		<div class="col-sm-5">
+			<InputText id="Existencia" class="form-control" placeholder="Existencia" @bind-Value="user.Existencia"/>
+			<ValidationMessage For="@(() => user.Existencia)" />
+		</div>
+	</div>
+
+<br />
+
+    <div class="form-group row">
+
+        <div class="col-md-1 col-xs-5 ">
+
+			<input type="submit" class="btn-toolbar btn-outline-primary" value="Guardar" @onclick="Guardar" />
+			</div>
+			 <div class="col-md-1 col-xs-5 ">
+			<input type="submit" class="btn-toolbar btn-outline-danger" value="Cancelar" @onclick="Cancelar" />
+			</div>
+			 <div class="col-md-1 col-xs-5">
+			<input type="submit" class="btn-toolbar btn-outline-warning" value="Eliminar" @onclick="Eliminar" />
+			</div>
+	</div>
+	  <div class="card-header"></div>
+
+</EditForm>

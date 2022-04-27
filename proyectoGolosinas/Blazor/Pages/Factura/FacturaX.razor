@@ -1,0 +1,41 @@
+﻿@page "/FacturaX"
+
+   
+          <strong><em><font face=”Comic Sans MS”><center><h3 style="color:red;">Nuestras Deliciosas Golosinas Disponibles...... ;D </h3></center></font></em></strong>
+        <strong><em><font face=”Comic Sans MS”><center><h3 style="color:red;">                 </h3></center></font></em></strong>
+          <strong><em><font face=”Comic Sans MS”><center><h3 style="color:red;"> Elija El producto que desea comprar </h3></center></font></em></strong>
+          <div class="card-header"></div>
+
+@if (productoLista == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <table class="table">
+       <thead style="color:blue;">
+            <tr>
+                <th>Código</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Existencia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prod in productoLista)
+            {
+                <tr>
+                    <td>@prod.Codigo</td>
+                    <td>@prod.Descripcion</td>
+                    <td>@prod.Precio</td>
+                    <td>@prod.Existencia</td>
+                    <td>
+                         <a href="/Factura/imprimir" class="btn btn-outline-primary">Comprar</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,68 @@
+﻿@page "/Usuarios"
+
+<body style="background-color:rgb(229, 231, 235 );">
+</body>
+<strong><em><font face=”Times New Roman”><center><h2 style="color:red;">Lista de Usuarios</h2></center></font></em></strong>
+
+<div class="card-header"></div>
+<style>
+    tr:nth-child(even) {
+        background-color: #FADBD8;
+    }
+</style>
+
+@if (usuariosLista == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <table class="table">
+        <thead style="color:blue;">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Esta Activo</th>
+                <th></th>
+            </tr>
+            </thead>
+        </thead>
+        <tbody>
+            @foreach (var user in usuariosLista)
+            {
+                <tr>
+                    <td>@user.Codigo</td>
+                    <td>@user.Nombre</td>
+                    <td>@user.Rol</td>
+                    <td>
+                        @if (@user.EstaActivo)
+                        {
+                            <span class="oi oi-circle-check" style="color:green;"></span>
+                        }
+                        else
+                        {
+                            <span class="oi oi-circle-x" style="color:red;"></span>
+                        }
+                    </td>
+                     <td>
+                       <strong> <a class="alert-heading" href="@($"/Usuarios/Editar/{user.Codigo}")">Editar</a></strong> 
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+       <div class="card-header"></div> 
+       <br />
+       <div class"form-group row">
+    <div class="col-sm-2">
+        <a href="/Usuarios/Nuevo" class="btn btn-outline-primary">Nuevo Usuario</a>
+    </div>
+</div>
+}
+
+
+
+
